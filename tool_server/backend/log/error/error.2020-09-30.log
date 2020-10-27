@@ -1,0 +1,1 @@
+2020-09-30 14:12:48.649 febs [http-nio-9090-exec-1] ERROR c.z.p.common.authentication.JWTUtil - error：The token was expected to have 3 parts, but got 1.

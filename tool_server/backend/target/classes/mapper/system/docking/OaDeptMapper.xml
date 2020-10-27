@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkcm.problemtool.system.dao.docking.OaDeptMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zkcm.problemtool.system.domain.OaDept">
+        <id column="id" property="id" />
+        <result column="deptName" property="deptName" />
+        <result column="deptId" property="deptId" />
+        <result column="deptFlagCode"  property="deptFlagCode"/>
+        <result column="chargeEmployee"  property="chargeEmployee"/>
+        <result column="deptPhone"  property="deptPhone"/>
+        <result column="deptFax"  property="deptFax"/>
+        <result column="deptStatus"  property="deptStatus"/>
+        <result column="orderCode"  property="orderCode"/>
+        <result column="ifExtBranch"  property="ifExtBranch"/>
+        <result column="deptManagerNum"  property="deptManagerNum"/>
+        <result column="chargePost"  property="chargePost"/>
+        <result column="chargePostNum"  property="chargePostNum"/>
+        <result column="deptLeaderName"  property="deptLeaderName"/>
+        <result column="deptLeaderNum"  property="deptLeaderNum"/>
+        <result column="deptLeaderPost"  property="deptLeaderPost"/>
+        <result column="attr1"  property="attr1"/>
+        <result column="attr2"  property="attr2"/>
+        <result column="attr3"  property="attr3"/>
+        <result column="attr4"  property="attr4"/>
+        <result column="attr5"  property="attr5"/>
+        <result column="deptNum"  property="deptNum"/>
+        <result column="parentDeptNum"  property="parentDeptNum"/>
+        <result column="parentDept"  property="parentDept"/>
+        <result column="deptType"  property="deptType"/>
+        <result column="deptTypeCode"  property="deptTypeCode"/>
+
+
+    </resultMap>
+
+</mapper>

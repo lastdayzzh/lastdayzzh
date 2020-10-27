@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkcm.problemtool.system.dao.BookInfoMapper">
+    <resultMap id="BaseResultMap" type="com.zkcm.problemtool.system.domain.BookInfo">
+        <id column="book_id" property="bookId"/>
+        <result column="book_name"  property="bookName"/>
+        <result column="isbn"  property="isbn"/>
+        <result column="question_num"  property="questionNum"/>
+        <result column="book_info"  property="bookInfo"/>
+        <result column="language_id"  property="languageId"/>
+        <result column="book_type_id"  property="bookTypeId"/>
+        <result column="edition"  property="edition"/>
+        <result column="print_num"  property="printNum"/>
+        <result column="branch"  property="branch"/>
+        <result column="editor"  property="editor"/>
+        <result column="status"  property="status"/>
+        <result column="create_user"  property="createUser"/>
+        <result column="modify_user"  property="modifyUser"/>
+        <result column="create_time"  property="createTime"/>
+        <result column="modify_time"  property="modifyTime"/>
+        <result column="is_delete"  property="isDelete"/>
+        <result column="check_result"  property="checkResult"/>
+    </resultMap>
+
+    <update id="deleteBookInfos"  parameterType="java.util.List">
+        update
+        t_book_info
+        <set>
+            is_delete = 1
+        </set>
+        where  book_id in
+        <foreach collection="bookIds" item="id" index="index" open="(" close=")" separator=",">
+            ${id}
+        </foreach>
+    </update>
+</mapper>

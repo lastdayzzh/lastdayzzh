@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkcm.problemtool.system.dao.picture.PictureMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zkcm.problemtool.system.domain.Picture">
+        <id column="id" property="id" />
+        <result column="file_name" property="fileName" />
+        <result column="original" property="original" />
+        <result column="create_user" property="createUser" />
+        <result column="create_time" property="createTime" />
+        <result column="update_user" property="updateUser" />
+        <result column="update_time" property="updateTime" />
+        <result column="del_flag" property="delFlag" />
+        <result column="url" property="url" />
+        <result column="picture_id" property="pictureId" />
+    </resultMap>
+
+    <select id="pagePicture"
+            parameterType="com.zkcm.problemtool.system.domain.Picture"
+            resultType="com.zkcm.problemtool.system.domain.Picture">
+        SELECT
+        a.id id,
+        a.file_name fileName,
+        a.original original,
+        a.create_user createUser,
+        a.create_time createTime,
+        a.del_flag del_flag,
+        a.picture_id pictureId,
+        a.url url
+        FROM
+        t_picture a
+        JOIN t_user u ON a.create_user = u.username
+        JOIN t_dept o ON o.dept_id = a.organization
+        <where>
+            a.del_flag = '0'
+            <if test="param.original !=null and param.original !=''">
+                and  a.original like concat('%',#{param.original},'%')
+            </if>
+            <if test="param.createUser !=null and param.createUser !=''">
+                and  a.create_user like concat('%',#{param.createUser},'%')
+            </if>
+            <if test="param.createTimeStart != null ">
+                And a.create_time &gt; #{param.createTimeStart}
+            </if>
+            <if test="param.createTimeEnd!= null ">
+                And a.create_time &lt; #{param.createTimeEnd}
+            </if>
+            ${param.sqlMap.dsf}
+        </where>
+    </select>
+
+    <select id="pictureList"
+            resultType="com.zkcm.problemtool.system.domain.Picture">
+        SELECT
+        a.id id,
+        a.file_name fileName,
+        a.original original,
+        a.create_user createUser,
+        a.create_time createTime,
+        a.del_flag del_flag,
+        a.picture_id pictureId,
+        a.url url
+        FROM
+        t_picture a
+        JOIN t_user u ON a.create_user = u.username
+        JOIN t_dept o ON o.dept_id = a.organization
+        <where>
+            NOT EXISTS (
+                    SELECT
+                        *
+                    FROM
+                        t_problem_picture_detail b
+                            JOIN t_problem c on b.problem_id = c.id
+                    WHERE
+                        a.id = b.picture_id  and c.del_flag = '0'
+                    <if test="param.original !=null and param.original !=''">
+                        and  a.original like concat('%',#{param.original},'%')
+                    </if>
+                    <if test="param.createUser !=null and param.createUser !=''">
+                        and  a.create_user like concat('%',#{param.createUser},'%')
+                    </if>
+                    <if test="param.createTimeStart != null ">
+                        And a.create_time &gt; #{param.createTimeStart}
+                    </if>
+                    <if test="param.createTimeEnd!= null ">
+                        And a.create_time &lt; #{param.createTimeEnd}
+                    </if>
+                )
+            ${param.sqlMap.dsf}
+        </where>
+    </select>
+
+    <select id="getPictureRecordList" resultType="com.zkcm.problemtool.system.domain.Picture">
+        SELECT
+        a.id id,
+        a.file_name fileName,
+        a.original original,
+        a.create_user createUser,
+        a.create_time createTime,
+        a.del_flag del_flag,
+        a.picture_id pictureId,
+        a.url url
+        FROM
+        t_picture a
+        <where>
+            a.del_flag = '0'  and a.id in
+            <foreach collection="list" item = "item" open="(" close=")" separator="," >
+                #{item}
+            </foreach>
+            <if test="param.original !=null and param.original !=''">
+                and  a.original like concat('%',#{param.original},'%')
+            </if>
+            <if test="param.createUser !=null and param.createUser !=''">
+                and  a.create_user like concat('%',#{param.createUser},'%')
+            </if>
+            <if test="param.createTimeStart != null ">
+                And a.create_time &gt; #{param.createTimeStart}
+            </if>
+            <if test="param.createTimeEnd!= null ">
+                And a.create_time &lt; #{param.createTimeEnd}
+            </if>
+        </where>
+    </select>
+</mapper>

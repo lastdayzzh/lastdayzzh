@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkcm.problemtool.system.dao.BookInfoLogMapper">
+    <resultMap id="BaseResultMap" type="com.zkcm.problemtool.system.domain.BookInfoLog">
+        <id column="id" property="id"/>
+        <result column="book_id" property="bookId"/>
+        <result column="book_name"  property="bookName"/>
+        <result column="isbn"  property="isbn"/>
+        <result column="question_num"  property="questionNum"/>
+        <result column="book_type"  property="bookType"/>
+        <result column="language"  property="language"/>
+        <result column="edition"  property="edition"/>
+        <result column="print_num"  property="printNum"/>
+        <result column="branch"  property="branch"/>
+        <result column="editor"  property="editor"/>
+        <result column="dept"  property="dept"/>
+        <result column="operation"  property="operation"/>
+        <result column="create_user"  property="createUser"/>
+        <result column="modify_user"  property="modifyUser"/>
+        <result column="create_time"  property="createTime"/>
+        <result column="modify_time"  property="modifyTime"/>
+    </resultMap>
+</mapper>

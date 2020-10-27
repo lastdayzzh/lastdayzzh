@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkcm.problemtool.system.dao.ProblemSortMapper">
+    <resultMap id="BaseResultMap" type="com.zkcm.problemtool.system.domain.ProblemSort">
+        <id column="id" property="id"/>
+        <result column="name"  property="name"/>
+        <result column="problem_type"  property="problemType"/>
+        <result column="data_make_type"  property="dataMakeType"/>
+        <result column="number"  property="number"/>
+        <result column="remark"  property="remark"/>
+        <result column="status"  property="status"/>
+        <result column="create_user"  property="createUser"/>
+        <result column="create_time"  property="createTime"/>
+        <result column="modify_time"  property="modifyTime"/>
+    </resultMap>
+</mapper>

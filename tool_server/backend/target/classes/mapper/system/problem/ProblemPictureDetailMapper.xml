@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkcm.problemtool.system.dao.problem.ProblemPictureDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zkcm.problemtool.system.domain.ProblemPictureDetail">
+        <id column="id" property="id" />
+        <result column="problem_id" property="problemId" />
+        <result column="picture_id" property="pictureId" />
+        <result column="problem_classification" property="problemClassification" />
+    </resultMap>
+
+    <select id="getDetailList"
+            resultType="com.zkcm.problemtool.system.domain.ProblemPictureDetail">
+        SELECT
+            group_concat(problem_classification) problemClassification,
+            picture_id pictureId,
+            problem_id problemId
+        FROM
+            `t_problem_picture_detail` a
+        WHERE
+            problem_id = #{id}
+        GROUP BY
+            picture_id;
+    </select>
+</mapper>

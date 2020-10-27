@@ -1,0 +1,104 @@
+{
+  "groups": [
+    {
+      "name": "febs",
+      "type": "com.zkcm.problemtool.common.properties.FebsProperties",
+      "sourceType": "com.zkcm.problemtool.common.properties.FebsProperties"
+    },
+    {
+      "name": "spring.ftp",
+      "type": "com.zkcm.problemtool.system.config.FtpConfig",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.minio",
+      "type": "com.zkcm.problemtool.system.config.MinIOConfig",
+      "sourceType": "com.zkcm.problemtool.system.config.MinIOConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "febs.open-aop-log",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.zkcm.problemtool.common.properties.FebsProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "febs.shiro",
+      "type": "com.zkcm.problemtool.common.properties.ShiroProperties",
+      "sourceType": "com.zkcm.problemtool.common.properties.FebsProperties"
+    },
+    {
+      "name": "febs.swagger",
+      "type": "com.zkcm.problemtool.common.properties.SwaggerProperties",
+      "sourceType": "com.zkcm.problemtool.common.properties.FebsProperties"
+    },
+    {
+      "name": "spring.ftp.already-upload-path",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.ftp.book-upload-path",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.ftp.cover-path",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.ftp.host",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.ftp.image-path",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.ftp.password",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.ftp.pending-upload-path",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.ftp.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "spring.ftp.user",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.ftp.xml-path",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.FtpConfig"
+    },
+    {
+      "name": "spring.minio.access-key",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.MinIOConfig"
+    },
+    {
+      "name": "spring.minio.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.MinIOConfig"
+    },
+    {
+      "name": "spring.minio.url",
+      "type": "java.lang.String",
+      "sourceType": "com.zkcm.problemtool.system.config.MinIOConfig"
+    }
+  ],
+  "hints": []
+}
